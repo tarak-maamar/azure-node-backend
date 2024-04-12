@@ -1,23 +1,10 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-console */
-import sql from 'mssql';
+import sql, { config } from 'mssql';
 
-const config = {
-  user: 'sa',
-  password: 'Ttaarreekk/93',
-  server: 'localhost',
-  database: 'master',
-  requestTimeout: 15000,
-  options: {
-    keepAlive: true,
-    encrypt: true,
-    trustServerCertificate: true,
-  },
-};
-
-export async function connectToDatabase() {
+export async function connectToDatabase(databaseConfig: config) {
   try {
-    await sql.connect(config);
+    await sql.connect(databaseConfig);
     console.log('Connected to Azure SQL database');
   } catch (err) {
     console.error('Error connecting to Azure SQL database:', err);
