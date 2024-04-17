@@ -40,14 +40,23 @@ export const checkIfCoordinatesExists: IMiddleware = async (
   res,
   next,
 ) => {
-  const { email } = req.body;
-  const user = await User.findOne({ where: { email } });
+  const { email, phone } = req.body;
+  let user = await User.findOne({ where: { email } });
 
   if (user) {
     res.status(422).send({ message: 'email address already in Use !' });
 
     return;
   }
+
+  user = await User.findOne({ where: { phone } });
+
+  if (user) {
+    res.status(422).send({ message: 'phone number already in Use !' });
+
+    return;
+  }
+
   next();
 };
 

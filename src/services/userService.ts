@@ -28,7 +28,7 @@ export const signUp = async (
 
     return newUser;
   } catch (error) {
-    throw new Error('Error creating a new User !');
+    throw new Error('Error creating a new User !', error);
   }
 };
 
@@ -73,6 +73,8 @@ export const createRefreshToken = async (user: {
   const refreshToken = TokenService.createRefreshToken(user.id, sessionId);
 
   //TODO: Add User session support maybe
+  // user.sessions.push({ refreshToken, identifier: sessionId });
+  // await user.save();
 
   return { refreshToken, sessionId };
 };
