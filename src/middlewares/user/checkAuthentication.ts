@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import { compareSync } from 'bcrypt';
 
 import { IMiddleware } from 'types/IMiddleware';

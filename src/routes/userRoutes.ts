@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import * as UserController from 'controllers/userController';
 import { Router } from 'express';
 import * as UserMiddleware from 'middlewares/user';

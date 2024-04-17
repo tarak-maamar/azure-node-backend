@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import { Sequelize } from 'sequelize';
 import 'dotenv/config';
 

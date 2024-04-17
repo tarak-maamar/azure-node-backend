@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import { check, validationResult } from 'express-validator';
 import User from 'models/User';
 

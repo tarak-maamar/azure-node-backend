@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 import { sign } from 'jsonwebtoken';
 

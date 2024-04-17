@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import { DataTypes, Model } from 'sequelize';
 
 import { sequelize } from './sequelize';

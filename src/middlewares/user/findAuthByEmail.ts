@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import User from 'models/User';
 
 import { IMiddleware } from 'types/IMiddleware';

@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-
 import { IMiddleware } from 'types/IMiddleware';
 
 import * as UserService from '../services/userService';

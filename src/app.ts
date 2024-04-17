@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable no-console */
 import bodyParser from 'body-parser';
 import express from 'express';

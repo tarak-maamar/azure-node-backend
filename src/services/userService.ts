@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import User from 'models/User';
 import * as TokenService from 'services/tokenService';
 import { v4 as uuidv4 } from 'uuid';
