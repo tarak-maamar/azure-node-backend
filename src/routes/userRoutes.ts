@@ -9,7 +9,7 @@ const BASE_ROUTE = '/user';
 router.post(
   `${BASE_ROUTE}/sign-up`,
   UserValidator.signUp,
-  UserValidator.checkIfCoordinatesExists,
+  UserMiddleware.checkIfCoordinatesExists,
   UserController.signUp,
 );
 
