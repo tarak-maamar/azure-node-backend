@@ -5,21 +5,18 @@ import { v4 as uuidv4 } from 'uuid';
 import { hashPassword } from 'helpers/hashPassword';
 
 export const signUp = async (
-  userData: {
-    firstName: string,
-    lastName: string,
-    email: string,
-    phone: string,
-    password: string },
+  userData: User,
 ) => {
   const {
-    firstName, lastName, email, phone, password,
+    firstName, lastName, userName, role, email, phone, password,
   } = userData;
 
   try {
     const newUser = await User.create({
       firstName,
       lastName,
+      userName,
+      role,
       email,
       password: hashPassword(password),
       phone,

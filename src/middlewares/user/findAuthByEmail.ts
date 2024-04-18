@@ -12,7 +12,7 @@ export const findAuthByEmail: IMiddleware = async (req, res, next) => {
   });
 
   if (!user) {
-    res.status(404).send('Problem while finding user');
+    res.status(404).send('No User found for this email !');
 
     return;
   }
