@@ -18,7 +18,7 @@ export const signIn: IMiddleware = async (req, res) => {
   try {
     const user = await UserService.signIn(selectedUser);
 
-    res.status(201).json(user);
+    res.status(200).json(user);
   } catch (error) {
     res.status(500).send({ message: error.message, stack: error.stack });
   }
