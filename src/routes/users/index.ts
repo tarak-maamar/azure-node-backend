@@ -4,7 +4,7 @@ import * as UserMiddleware from 'middlewares/user';
 import * as UserValidator from 'validators/user';
 
 const router = Router();
-const BASE_ROUTE = '/user';
+const BASE_ROUTE = '/auth';
 
 router.post(
   `${BASE_ROUTE}/sign-up`,
