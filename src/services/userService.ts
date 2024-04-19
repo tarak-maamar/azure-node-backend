@@ -22,55 +22,32 @@ export const signUp = async (
       phone,
     });
 
-    return newUser;
+    return await constructSignedInUserObject(newUser);
   } catch (error) {
     throw new Error('Error creating a new User !', error);
   }
 };
 
 export const signIn = async (
-  user: {
-    id: string,
-    firstName: string,
-    lastName: string,
-    email: string,
-    password: string,
-    phone: string
-  },
+  user: User,
 ) => constructSignedInUserObject(user);
 
 export const constructSignedInUserObject = async (
-  user: {
-    id: string,
-    firstName: string,
-    lastName: string,
-    email: string,
-    password: string,
-    phone: string
-  },
+  user: User,
 ) => {
   const { refreshToken, sessionId } = await createRefreshToken(user);
 
-  const accessToken = TokenService.createAccessToken(user.id, sessionId);
+  const accessToken = TokenService.createAccessToken(user.id.toString(), sessionId);
 
   return { user, token: { refreshToken, accessToken } };
 };
 
-export const createRefreshToken = async (user: {
-  id: string,
-  firstName: string,
-  lastName: string,
-  email: string,
-  password: string,
-  phone: string
-}) => {
+export const createRefreshToken = async (user: User) => {
   const sessionId = uuidv4();
 
-  const refreshToken = TokenService.createRefreshToken(user.id, sessionId);
+  const refreshToken = TokenService.createRefreshToken(user.id.toString(), sessionId);
 
   //TODO: Add User session support maybe
-  // user.sessions.push({ refreshToken, identifier: sessionId });
-  // await user.save();
 
   return { refreshToken, sessionId };
 };

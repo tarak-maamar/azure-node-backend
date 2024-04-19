@@ -1,8 +1,7 @@
+import { sequelize } from 'init';
 import {
   CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model,
 } from 'sequelize';
-
-import { sequelize } from './sequelize';
 
 export enum ROLE {
   ADMIN = 'ADMIN',
