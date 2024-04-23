@@ -26,3 +26,5 @@ sequelize.authenticate()
   });
 
 User.sync();
+
+export default app;

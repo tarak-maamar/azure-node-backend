@@ -22,7 +22,8 @@ module.exports = {
     //#endregion  //*======== Jest Express ===========
     //#region  //*=========== Jest Common  ===========
     resetMocks: true,
-    moduleDirectories: ["node_modules"],
     //#endregion  //*======== Jest Common  ===========
+    globalSetup: "<rootDir>/__test__/globalSetup.ts",
+    globalTeardown: "<rootDir>/__test__/globalTeardown.ts",
   };
   
