@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc",
     "build:js": "babel src --out-dir build --extensions \".ts\"",
-    "test": "jest",
+    "test": "cross-env NODE_ENV=test jest --coverage --runInBand --detectOpenHandles --forceExit",
     "start": "tsc && nodemon src/app.ts",
     "lint": "tsc && eslint src --fix"
   },
@@ -46,15 +46,18 @@
     "@types/jest": "^29.5.12",
     "@types/jsonwebtoken": "^9.0.6",
     "@types/sequelize": "^4.28.20",
+    "@types/supertest": "^6.0.2",
     "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^7.5.0",
     "@typescript-eslint/parser": "^7.5.0",
     "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-source-map-support": "^2.2.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "17.0.0",
     "jest": "^29.7.0",
+    "supertest": "^6.3.4",
     "ts-jest": "^29.1.2"
   }
 }
